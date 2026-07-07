@@ -369,8 +369,8 @@ footer .f-copy{font-size:11px;color:var(--gold);margin-top:24px;letter-spacing:.
     <h2>本格鑑定 お申込み</h2>
     <div class="ornament">✦</div>
     <p class="lead">
-      ご入力後、「申込み内容を作成する」を押すと内容がコピーされます。<br>
-      そのまま公式LINEまたはInstagramのDMに貼り付けてお送りください。
+      ご入力後、「申込み内容を作成する」を押して、<br>
+      「メールで送る」からそのままお送りください。
     </p>
 
     <div class="form-card">
@@ -425,11 +425,12 @@ footer .f-copy{font-size:11px;color:var(--gold);margin-top:24px;letter-spacing:.
 
       <div id="applyResult">
         <div class="ornament">✦</div>
-        <p style="font-size:13.5px;text-align:center;margin-bottom:12px;">以下の内容をコピーして、LINEまたはDMでお送りください。</p>
+        <p style="font-size:13.5px;text-align:center;margin-bottom:12px;">以下の内容をご確認のうえ、「メールで送る」からお送りください。</p>
         <textarea id="applyText" readonly></textarea>
         <p class="copy-status" id="copyStatus"></p>
         <div class="send-btns">
           <button class="btn btn-line" onclick="copyApply()">内容をコピーする</button>
+          <a class="btn btn-gold" href="#" id="mailBtn">メールで送る</a>
           <!-- ★ LINE/InstagramのURLが決まったら、下の div の style="display:none" を削除し、href を設定してください -->
           <div class="send-btns" style="display:none;">
             <!-- ★ 公式LINEのURL(例: https://lin.ee/xxxxxxx) -->
@@ -627,6 +628,10 @@ ${detail}
 このメッセージのままお送りください。`;
 
   document.getElementById("applyText").value=text;
+  document.getElementById("mailBtn").href=
+    "mailto:amuletiajewelry@gmail.com"
+    +"?subject="+encodeURIComponent("【AMULETIA】本格鑑定のお申込み("+name+"さま)")
+    +"&body="+encodeURIComponent(text);
   const box=document.getElementById("applyResult");
   box.classList.add("show");
   copyApply();
@@ -636,7 +641,7 @@ ${detail}
 function copyApply(){
   const ta=document.getElementById("applyText");
   const status=document.getElementById("copyStatus");
-  const done=()=>{ status.textContent="✦ コピーしました。LINEまたはDMに貼り付けてお送りください。"; };
+  const done=()=>{ status.textContent="✦ コピーしました。「メールで送る」からそのままお送りいただけます。"; };
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(ta.value).then(done).catch(()=>{ legacyCopy(ta,status); });
   }else{
@@ -645,7 +650,7 @@ function copyApply(){
 }
 function legacyCopy(ta,status){
   ta.focus(); ta.select();
-  try{ document.execCommand("copy"); status.textContent="✦ コピーしました。LINEまたはDMに貼り付けてお送りください。"; }
+  try{ document.execCommand("copy"); status.textContent="✦ コピーしました。「メールで送る」からそのままお送りいただけます。"; }
   catch(e){ status.textContent="上の内容を長押し(または全選択)してコピーしてください。"; }
 }
 
