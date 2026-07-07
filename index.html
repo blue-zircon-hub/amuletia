@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMULETIA アミュレティア | 運命から選ばれる、あなただけの守護石。</title>
+<meta name="description" content="インド占星術・四柱推命・六星占術の3つの占術から、あなたのための守護石をお選びする天然石ジュエリーブランド AMULETIA。無料ソウルストーン診断も。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#f6f1e6;
+  --ivory-deep:#efe7d5;
+  --gold:#b3903f;
+  --gold-light:#d4b96a;
+  --gold-pale:#e6d9b8;
+  --ink:#4a3f2e;
+  --ink-soft:#7a6f5a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Shippori Mincho','Yu Mincho','Hiragino Mincho ProN',serif;
+  background:var(--ivory);
+  color:var(--ink);
+  line-height:1.9;
+  letter-spacing:.06em;
+  /* さりげないクワトレフォイル(モロッコ風)模様 */
+  background-image:radial-gradient(circle at 25% 25%, rgba(179,144,63,.028) 0 9px, transparent 10px),
+                   radial-gradient(circle at 75% 75%, rgba(179,144,63,.028) 0 9px, transparent 10px);
+  background-size:90px 90px;
+}
+.en{font-family:'Cormorant Garamond',serif;letter-spacing:.22em;}
+section{padding:90px 20px;}
+.inner{max-width:860px;margin:0 auto;}
+
+/* ---- 装飾 ---- */
+.ornament{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:18px 0;}
+.ornament::before,.ornament::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--gold));}
+.ornament::after{background:linear-gradient(90deg,var(--gold),transparent);}
+.sec-label{color:var(--gold);text-align:center;font-size:13px;margin-bottom:6px;}
+h2{font-size:clamp(22px,4vw,30px);font-weight:500;text-align:center;letter-spacing:.14em;}
+.lead{text-align:center;margin:26px auto 0;max-width:640px;font-size:15px;color:var(--ink-soft);}
+
+/* ---- ヒーロー ---- */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:60px 20px;text-align:center;
+}
+.hero-frame{
+  position:relative;
+  padding:70px 40px 60px;
+  max-width:620px;width:100%;
+  border:1px solid var(--gold-light);
+  outline:1px solid var(--gold-pale);
+  outline-offset:6px;
+  border-radius:300px 300px 18px 18px;
+  background:linear-gradient(180deg,#faf6ec 0%,var(--ivory) 100%);
+  box-shadow:0 20px 60px rgba(122,102,53,.12);
+}
+.hero-moon{width:120px;height:120px;margin:0 auto 10px;display:block;}
+.hero h1{font-size:clamp(38px,8vw,58px);font-weight:500;color:var(--gold);letter-spacing:.3em;text-indent:.3em;font-family:'Cormorant Garamond',serif;}
+.hero .kana{color:var(--gold);font-size:14px;letter-spacing:.5em;text-indent:.5em;margin-top:4px;}
+.hero .tagline{margin-top:30px;font-size:clamp(16px,3vw,20px);letter-spacing:.18em;line-height:2.2;}
+.hero .sub{margin-top:14px;font-size:13px;color:var(--ink-soft);}
+.hero-cta{margin-top:38px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn{
+  display:inline-block;padding:15px 34px;border-radius:999px;
+  font-size:14px;letter-spacing:.14em;text-decoration:none;cursor:pointer;
+  transition:all .3s ease;border:1px solid var(--gold);
+  font-family:inherit;
+}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;box-shadow:0 6px 18px rgba(179,144,63,.35);}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(179,144,63,.45);}
+.btn-line{background:transparent;color:var(--gold);}
+.btn-line:hover{background:rgba(179,144,63,.08);}
+
+/* ---- ブランド紹介 ---- */
+.concept-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:50px;}
+.c-card{
+  background:#fbf7ee;border:1px solid var(--gold-pale);border-radius:130px 130px 14px 14px;
+  padding:46px 26px 34px;text-align:center;
+  transition:transform .3s ease;
+}
+.c-card:hover{transform:translateY(-4px);}
+.c-card .mark{font-size:26px;color:var(--gold);margin-bottom:14px;}
+.c-card h3{font-size:17px;font-weight:600;letter-spacing:.12em;margin-bottom:12px;color:var(--gold);}
+.c-card p{font-size:13.5px;color:var(--ink-soft);text-align:left;}
+
+/* ---- 診断 ---- */
+.shindan{background:linear-gradient(180deg,var(--ivory) 0%,var(--ivory-deep) 50%,var(--ivory) 100%);}
+.form-card{
+  max-width:560px;margin:46px auto 0;background:#fbf7ee;
+  border:1px solid var(--gold-light);border-radius:18px;padding:44px 34px;
+  box-shadow:0 14px 40px rgba(122,102,53,.10);
+}
+.field{margin-bottom:24px;}
+.field label{display:block;font-size:13.5px;margin-bottom:8px;letter-spacing:.1em;}
+.field .req{color:#b3603f;font-size:11px;margin-left:6px;}
+.field .opt{color:var(--ink-soft);font-size:11px;margin-left:6px;}
+input,select,textarea{
+  width:100%;padding:13px 16px;border:1px solid var(--gold-pale);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:15px;color:var(--ink);
+  outline:none;transition:border-color .2s;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);}
+.birth-row{display:flex;gap:10px;}
+.birth-row select{flex:1;}
+.form-note{font-size:11.5px;color:var(--ink-soft);margin-top:16px;line-height:1.8;}
+
+/* ---- 診断結果 ---- */
+#result{display:none;margin:56px auto 0;max-width:620px;}
+#result.show{display:block;animation:rise .9s ease both;}
+@keyframes rise{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:none;}}
+.result-frame{
+  border:1px solid var(--gold-light);outline:1px solid var(--gold-pale);outline-offset:5px;
+  border-radius:260px 260px 16px 16px;background:linear-gradient(180deg,#fbf7ee,#f6f0e2);
+  padding:64px 36px 46px;text-align:center;box-shadow:0 18px 50px rgba(122,102,53,.14);
+}
+.gem{
+  width:110px;height:110px;border-radius:50%;margin:6px auto 22px;position:relative;
+  box-shadow:0 10px 30px rgba(74,63,46,.25), inset -8px -12px 24px rgba(0,0,0,.18), inset 8px 10px 22px rgba(255,255,255,.55);
+}
+.gem::after{content:"";position:absolute;top:16px;left:22px;width:26px;height:16px;border-radius:50%;background:rgba(255,255,255,.65);filter:blur(2px);transform:rotate(-25deg);}
+.result-for{font-size:13px;color:var(--ink-soft);letter-spacing:.14em;}
+.soul-num{font-size:12px;color:var(--gold);letter-spacing:.2em;margin-top:14px;}
+.stone-name{font-size:clamp(24px,5vw,32px);color:var(--gold);letter-spacing:.16em;margin-top:6px;font-weight:600;}
+.stone-en{font-size:13px;color:var(--ink-soft);letter-spacing:.3em;margin-top:2px;}
+.stone-kw{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px;}
+.stone-kw span{border:1px solid var(--gold-light);color:var(--gold);border-radius:999px;padding:4px 16px;font-size:12px;letter-spacing:.1em;}
+.stone-msg{text-align:left;font-size:14.5px;margin-top:26px;line-height:2.1;}
+.stone-meaning{
+  text-align:left;font-size:13px;color:var(--ink-soft);margin-top:20px;
+  border-top:1px dashed var(--gold-pale);padding-top:18px;line-height:2;
+}
+.result-cta{margin-top:32px;}
+.result-cta p{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px;}
+
+/* ---- 本格鑑定 ---- */
+.flow-list{counter-reset:flow;max-width:620px;margin:46px auto 0;}
+.flow-item{
+  display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-bottom:1px dashed var(--gold-pale);
+}
+.flow-item:last-child{border-bottom:none;}
+.flow-num{
+  counter-increment:flow;flex:0 0 44px;height:44px;border:1px solid var(--gold);color:var(--gold);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;
+}
+.flow-num::before{content:counter(flow);}
+.flow-item h4{font-size:15.5px;letter-spacing:.1em;margin-bottom:4px;}
+.flow-item p{font-size:13.5px;color:var(--ink-soft);}
+.kanteisyo{
+  max-width:620px;margin:60px auto 0;background:#fbf7ee;border:1px solid var(--gold-pale);
+  border-radius:16px;padding:40px 34px;
+}
+.kanteisyo h3{text-align:center;font-size:16px;color:var(--gold);letter-spacing:.16em;margin-bottom:24px;}
+.kanteisyo ol{list-style:none;}
+.kanteisyo li{
+  padding:12px 0 12px 8px;border-bottom:1px solid rgba(179,144,63,.15);font-size:14px;
+  display:flex;gap:14px;align-items:baseline;
+}
+.kanteisyo li:last-child{border-bottom:none;}
+.kanteisyo li .no{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:15px;flex:0 0 20px;}
+.kanteisyo li small{color:var(--ink-soft);font-size:12px;margin-left:auto;text-align:right;}
+
+/* ---- 申込みフォーム ---- */
+.apply{background:linear-gradient(180deg,var(--ivory) 0%,var(--ivory-deep) 60%,var(--ivory) 100%);}
+.radio-row{display:flex;gap:12px;flex-wrap:wrap;}
+.radio-row label{
+  flex:1;min-width:120px;border:1px solid var(--gold-pale);border-radius:10px;background:#fff;
+  padding:12px 10px;text-align:center;font-size:13.5px;cursor:pointer;transition:all .2s;margin-bottom:0;
+}
+.radio-row input{display:none;}
+.radio-row label:has(input:checked){border-color:var(--gold);background:rgba(179,144,63,.08);color:var(--gold);}
+#applyResult{display:none;margin-top:30px;}
+#applyResult.show{display:block;animation:rise .7s ease both;}
+#applyText{height:220px;font-size:13px;line-height:1.8;}
+.copy-status{font-size:13px;color:var(--gold);text-align:center;margin-top:10px;min-height:20px;}
+.send-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:18px;}
+
+/* ---- フッター ---- */
+footer{padding:70px 20px 50px;text-align:center;border-top:1px solid var(--gold-pale);}
+footer .f-logo{font-size:24px;color:var(--gold);letter-spacing:.3em;font-family:'Cormorant Garamond',serif;}
+footer .f-tag{font-size:12px;color:var(--ink-soft);margin-top:8px;letter-spacing:.14em;}
+footer .f-note{font-size:11px;color:var(--ink-soft);margin-top:26px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.9;}
+footer .f-copy{font-size:11px;color:var(--gold);margin-top:24px;letter-spacing:.18em;}
+
+/* ---- フェードイン ---- */
+.fade{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease;}
+.fade.visible{opacity:1;transform:none;}
+
+@media (max-width:560px){
+  section{padding:70px 16px;}
+  .hero-frame{padding:54px 22px 44px;}
+  .form-card{padding:34px 22px;}
+  .result-frame{padding:52px 22px 38px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ ヒーロー ═══════════ -->
+<header class="hero">
+  <div class="hero-frame">
+    <svg class="hero-moon" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#b3903f" stroke-width="1.6">
+        <path d="M74 38 A26 26 0 1 0 74 82 A21 21 0 1 1 74 38 Z" fill="#c9a84c" stroke="none"/>
+        <g stroke-linecap="round" opacity=".8">
+          <line x1="60" y1="6"  x2="60" y2="16"/>
+          <line x1="60" y1="104" x2="60" y2="114"/>
+          <line x1="6"  y1="60" x2="16" y2="60"/>
+          <line x1="104" y1="60" x2="114" y2="60"/>
+          <line x1="22" y1="22" x2="29" y2="29"/>
+          <line x1="91" y1="91" x2="98" y2="98"/>
+          <line x1="22" y1="98" x2="29" y2="91"/>
+          <line x1="91" y1="29" x2="98" y2="22"/>
+        </g>
+      </g>
+      <path d="M88 52 l2.4 6 6 2.4 -6 2.4 -2.4 6 -2.4 -6 -6 -2.4 6 -2.4 Z" fill="#c9a84c"/>
+    </svg>
+    <h1>AMULETIA</h1>
+    <p class="kana">アミュレティア</p>
+    <div class="ornament">✦</div>
+    <p class="tagline">運命から選ばれる、<br>あなただけの守護石。</p>
+    <p class="sub">3つの占術と天然石が導く、一点もののお守りジュエリー</p>
+    <div class="hero-cta">
+      <a href="#shindan" class="btn btn-gold">無料ソウルストーン診断</a>
+      <a href="#kantei" class="btn btn-line">本格鑑定について</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ ブランド紹介 ═══════════ -->
+<section id="about">
+  <div class="inner fade">
+    <p class="sec-label en">CONCEPT</p>
+    <h2>AMULETIA について</h2>
+    <div class="ornament">✦</div>
+    <p class="lead">
+      AMULETIA は、天然石を主役にしたお守りジュエリーのブランドです。<br>
+      インド占星術・四柱推命・六星占術 ── 3つの占術であなたの生まれ持った資質と
+      いまの運気を丁寧に読み解き、あなたのための一石をお選びして、
+      世界にひとつのジュエリーに仕立てます。
+    </p>
+    <div class="concept-cards">
+      <div class="c-card">
+        <div class="mark">☽</div>
+        <h3>インド占星術</h3>
+        <p>ラグナ(上昇宮)・月星座・太陽星座から人生のテーマと魂の目的を、ダシャーとトランジットからいまの時期性を読み解きます。</p>
+      </div>
+      <div class="c-card">
+        <div class="mark">✦</div>
+        <h3>四柱推命</h3>
+        <p>日干から本質的な性格を、通変星から才能や資質を、大運・年運から巡りの流れを読み、五行に対応する石をご提案します。</p>
+      </div>
+      <div class="c-card">
+        <div class="mark">✧</div>
+        <h3>六星占術</h3>
+        <p>運命星から基本性格と対人傾向を読み、運気の波から行動のタイミングを見立てて、相性の良い石をお選びします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 無料ソウルストーン診断 ═══════════ -->
+<section id="shindan" class="shindan">
+  <div class="inner fade">
+    <p class="sec-label en">FREE READING</p>
+    <h2>無料ソウルストーン診断</h2>
+    <div class="ornament">✦</div>
+    <p class="lead">
+      誕生石が、運命の石とは限りません。<br>
+      お名前と生年月日から、いまのあなたに寄り添う
+      「ソウルストーン」を診断いたします。
+    </p>
+
+    <div class="form-card">
+      <div class="field">
+        <label for="sName">お名前(ニックネーム可)<span class="req">必須</span></label>
+        <input type="text" id="sName" placeholder="例:あかり" maxlength="20">
+      </div>
+      <div class="field">
+        <label>生年月日<span class="req">必須</span></label>
+        <div class="birth-row">
+          <select id="sYear" aria-label="年"></select>
+          <select id="sMonth" aria-label="月"></select>
+          <select id="sDay" aria-label="日"></select>
+        </div>
+      </div>
+      <button class="btn btn-gold" style="width:100%;" onclick="doShindan()">ソウルストーンを診断する</button>
+      <p class="form-note">※ 入力内容が送信されることはありません。診断はこの画面の中だけで行われます。</p>
+    </div>
+
+    <div id="result">
+      <div class="result-frame">
+        <div class="gem" id="rGem"></div>
+        <p class="result-for" id="rFor"></p>
+        <p class="soul-num" id="rNum"></p>
+        <p class="stone-name" id="rStone"></p>
+        <p class="stone-en en" id="rStoneEn"></p>
+        <div class="stone-kw" id="rKw"></div>
+        <p class="stone-msg" id="rMsg"></p>
+        <p class="stone-meaning" id="rMeaning"></p>
+        <div class="result-cta">
+          <div class="ornament">✦</div>
+          <p>3つの占術であなたを深く読み解き、<br>この先の運気まで見立てる本格鑑定もご用意しています。</p>
+          <a href="#kantei" class="btn btn-gold">本格鑑定を見てみる</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 本格鑑定のご案内 ═══════════ -->
+<section id="kantei">
+  <div class="inner fade">
+    <p class="sec-label en">PERSONAL READING</p>
+    <h2>本格鑑定 × お守りジュエリー</h2>
+    <div class="ornament">✦</div>
+    <p class="lead">
+      インド占星術・四柱推命・六星占術の3つの占術を統合し、
+      あなただけの鑑定書をお仕立てします。<br>
+      鑑定結果からお選びした守護石は、
+      一点もののジュエリーとしてお手元にお届けします。
+    </p>
+
+    <div class="kanteisyo">
+      <h3>─ 鑑定書の構成 ─</h3>
+      <ol>
+        <li><span class="no">I</span>今のあなたに流れているテーマ<small>導入</small></li>
+        <li><span class="no">II</span>あなたの生まれ持った資質<small>本質鑑定</small></li>
+        <li><span class="no">III</span>今の運気とタイミング<small>現在の流れ</small></li>
+        <li><span class="no">IV</span>仕事で発揮しやすい力<small>仕事・社会性</small></li>
+        <li><span class="no">V</span>ご相談テーマへの見立て<small>特定相談</small></li>
+        <li><span class="no">VI</span>AMULETIAが選んだ石<small>石の選定</small></li>
+        <li><span class="no">VII</span>最後に<small>締めのメッセージ</small></li>
+      </ol>
+    </div>
+
+    <div class="flow-list">
+      <div class="flow-item">
+        <div class="flow-num"></div>
+        <div><h4>お申込み</h4><p>下のフォームに生年月日やご相談内容をご入力ください。出生時刻・出生地をお教えいただくと、より丁寧に読み解くことができます。</p></div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num"></div>
+        <div><h4>3占術による鑑定</h4><p>3つの占術を統合し、あなたの本質・いまの運気・ご相談テーマへの見立てを、あたたかい言葉の鑑定書にまとめます。</p></div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num"></div>
+        <div><h4>守護石の選定</h4><p>鑑定結果とご相談テーマをもとに、いまのあなたに寄り添う石をお選びします。ご縁のあった一石との出会いをお楽しみください。</p></div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num"></div>
+        <div><h4>制作・お届け</h4><p>お選びした石を、一点もののジュエリーにお仕立てして鑑定書とともにお届けします。ギフト包装も承ります。</p></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px;">
+      <a href="#apply" class="btn btn-gold">鑑定を申し込む</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 申込みフォーム ═══════════ -->
+<section id="apply" class="apply">
+  <div class="inner fade">
+    <p class="sec-label en">APPLICATION</p>
+    <h2>本格鑑定 お申込み</h2>
+    <div class="ornament">✦</div>
+    <p class="lead">
+      ご入力後、「申込み内容を作成する」を押すと内容がコピーされます。<br>
+      そのまま公式LINEまたはInstagramのDMに貼り付けてお送りください。
+    </p>
+
+    <div class="form-card">
+      <div class="field">
+        <label for="aName">お名前(ニックネーム可)<span class="req">必須</span></label>
+        <input type="text" id="aName" placeholder="例:あかり" maxlength="30">
+      </div>
+      <div class="field">
+        <label>生年月日<span class="req">必須</span></label>
+        <div class="birth-row">
+          <select id="aYear" aria-label="年"></select>
+          <select id="aMonth" aria-label="月"></select>
+          <select id="aDay" aria-label="日"></select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="aTime">出生時刻<span class="opt">任意(わかると鑑定の精度が上がります)</span></label>
+        <input type="time" id="aTime">
+      </div>
+      <div class="field">
+        <label for="aPlace">出生地(都道府県または国)<span class="opt">任意(推奨)</span></label>
+        <input type="text" id="aPlace" placeholder="例:神奈川県" maxlength="30">
+      </div>
+      <div class="field">
+        <label for="aCategory">ご相談カテゴリー<span class="req">必須</span></label>
+        <select id="aCategory">
+          <option value="">選択してください</option>
+          <option>恋愛</option>
+          <option>仕事</option>
+          <option>金運</option>
+          <option>人間関係</option>
+          <option>家庭</option>
+          <option>自己実現</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="aDetail">具体的なご相談内容<span class="opt">任意(300字以内)</span></label>
+        <textarea id="aDetail" rows="4" maxlength="300" placeholder="いま気になっていること、鑑定で見てほしいことなどを自由にお書きください。"></textarea>
+      </div>
+      <div class="field">
+        <label for="aRing">リングサイズ(号数)<span class="opt">リングをご希望の場合。サイズゲージの貸出もございます</span></label>
+        <input type="text" id="aRing" placeholder="例:9号 / わからない" maxlength="20">
+      </div>
+      <div class="field">
+        <label>ご用途<span class="req">必須</span></label>
+        <div class="radio-row">
+          <label><input type="radio" name="aUse" value="自分用">自分用</label>
+          <label><input type="radio" name="aUse" value="ギフト">ギフト</label>
+        </div>
+      </div>
+      <button class="btn btn-gold" style="width:100%;" onclick="makeApply()">申込み内容を作成する</button>
+
+      <div id="applyResult">
+        <div class="ornament">✦</div>
+        <p style="font-size:13.5px;text-align:center;margin-bottom:12px;">以下の内容をコピーして、LINEまたはDMでお送りください。</p>
+        <textarea id="applyText" readonly></textarea>
+        <p class="copy-status" id="copyStatus"></p>
+        <div class="send-btns">
+          <button class="btn btn-line" onclick="copyApply()">内容をコピーする</button>
+          <!-- ★ LINE/InstagramのURLが決まったら、下の div の style="display:none" を削除し、href を設定してください -->
+          <div class="send-btns" style="display:none;">
+            <!-- ★ 公式LINEのURL(例: https://lin.ee/xxxxxxx) -->
+            <a class="btn btn-gold" href="#" id="lineBtn" target="_blank" rel="noopener">公式LINEで送る</a>
+            <!-- ★ InstagramのプロフィールURL(例: https://www.instagram.com/xxxx/) -->
+            <a class="btn btn-gold" href="#" id="instaBtn" target="_blank" rel="noopener">Instagramで送る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ フッター ═══════════ -->
+<footer>
+  <p class="f-logo">AMULETIA</p>
+  <p class="f-tag">運命から選ばれる、あなただけの守護石。</p>
+  <p class="f-note">
+    ※ 当サイトの診断・鑑定は、天然石の伝承や占術に基づいた読み物としてお楽しみいただくものであり、
+    効果・効能を保証するものではありません。石の意味は古くからの言い伝えによるものです。
+  </p>
+  <p class="f-copy en">&copy; AMULETIA</p>
+</footer>
+
+<script>
+/* ══════════ ソウルストーン12種 ══════════ */
+const STONES = [
+  {
+    name:"ムーンストーン", en:"MOONSTONE",
+    grad:"radial-gradient(circle at 35% 30%, #ffffff, #dfe6f2 45%, #aab8d8 80%)",
+    kw:["直感","やさしさ","新しい始まり"],
+    msg:"を選んだのは、月のように満ち欠けしながら進んでいく、しなやかな感受性の持ち主だからです。周囲の気持ちを繊細に感じ取れるあなたは、人の心に寄り添う場面で力を発揮しやすいでしょう。いまは、焦らずに自分のリズムを取り戻すことで道が開けていく時期です。夜にひと呼吸おく習慣が、あなたの直感をさらに研ぎ澄ませてくれるはずです。",
+    meaning:"ムーンストーンは「月の力が宿る石」と言われ、持ち主の直感を高め、新しい一歩をやさしく照らすと伝えられています。"
+  },
+  {
+    name:"ローズクォーツ", en:"ROSE QUARTZ",
+    grad:"radial-gradient(circle at 35% 30%, #ffe9ee, #f6c6d3 50%, #e39aae 85%)",
+    kw:["愛","自己肯定","癒やし"],
+    msg:"を選んだのは、人を思いやるあたたかさを生まれ持っているからです。誰かのために動けるあなたは、その分、自分のことを後回しにしやすい傾向があります。いまは、自分自身にもやさしい言葉をかけてあげることで、めぐりが整いやすくなる時期です。あなたが自分を大切にするほど、まわりとのご縁も自然とあたたかいものになっていくでしょう。",
+    meaning:"ローズクォーツは「愛と美の女神の石」と言われ、自分を慈しむ心を育て、良いご縁を引き寄せるサポートをすると伝えられています。"
+  },
+  {
+    name:"シトリン", en:"CITRINE",
+    grad:"radial-gradient(circle at 35% 30%, #fff3cf, #f5d878 50%, #d9a83a 85%)",
+    kw:["豊かさ","明るさ","前進"],
+    msg:"を選んだのは、太陽のようにまわりを明るくする力を持っているからです。あなたがいる場所には自然と人が集まり、物事が動き出しやすい傾向があります。いまは、興味のあることに素直に手を伸ばすことで、豊かさの流れが整いやすい時期です。小さな一歩でかまいません。あなたの「やってみたい」が、次の展開を連れてきてくれるでしょう。",
+    meaning:"シトリンは「太陽の石」「商売の石」と言われ、明るいエネルギーで豊かさを意識するきっかけを与えてくれると伝えられています。"
+  },
+  {
+    name:"アクアマリン", en:"AQUAMARINE",
+    grad:"radial-gradient(circle at 35% 30%, #e8fbfb, #b8e6ea 50%, #7fc4cf 85%)",
+    kw:["調和","コミュニケーション","流れ"],
+    msg:"を選んだのは、水のように場になじみ、人と人をつなぐ柔らかさを持っているからです。聞き上手なあなたのまわりでは、こわばった空気も自然とほどけていきやすいでしょう。いまは、無理に流れに逆らわず、来たものを丁寧に受け取ることで運が整う時期です。あなたらしい穏やかさが、そのまま信頼という財産になっていきます。",
+    meaning:"アクアマリンは「海の精の石」と言われ、コミュニケーションを円滑にし、心を穏やかに整えるサポートをすると伝えられています。"
+  },
+  {
+    name:"タイガーアイ", en:"TIGER EYE",
+    grad:"radial-gradient(circle at 35% 30%, #e8c07a, #b57e2f 55%, #6f4a1d 90%)",
+    kw:["洞察","決断","仕事運"],
+    msg:"を選んだのは、物事の本質を見抜く目と、やり抜く芯の強さを持っているからです。あなたは一度決めたことを着実に形にしていける傾向があります。いまは、迷っていたことにひとつ決断を下すことで、流れが大きく動きやすい時期です。あなたの選択には、これまで積み重ねてきた経験という裏付けがあります。自信を持って進んでください。",
+    meaning:"タイガーアイは「虎の目の石」と言われ、洞察力を高めて仕事や勝負ごとの場面で持ち主を支えると伝えられています。"
+  },
+  {
+    name:"カーネリアン", en:"CARNELIAN",
+    grad:"radial-gradient(circle at 35% 30%, #ffb98a, #e0703c 55%, #a63d1e 90%)",
+    kw:["行動力","情熱","勇気"],
+    msg:"を選んだのは、心に火を灯すと一気に動ける、情熱の人だからです。あなたの熱意はまわりに伝わりやすく、人を巻き込んで物事を進める力があります。いまは、頭で考えるより、まず小さく動いてみることで運が味方しやすい時期です。最初の一歩さえ踏み出せば、あとは持ち前の推進力が連れて行ってくれるでしょう。",
+    meaning:"カーネリアンは「勝利へ導く石」と言われ、行動する勇気を与え、目標へ向かう背中を押してくれると伝えられています。"
+  },
+  {
+    name:"アメジスト", en:"AMETHYST",
+    grad:"radial-gradient(circle at 35% 30%, #e6d4f5, #b18ad6 55%, #6e4a9e 90%)",
+    kw:["静けさ","知性","守り"],
+    msg:"を選んだのは、静かな水面のように深く考える知性を持っているからです。あなたは物事の表面ではなく、その奥にある意味を感じ取れる傾向があります。いまは、情報や人付き合いを少し整理して、心の静けさを取り戻すことで冴えが増す時期です。あなたが静かに考え抜いて出した答えは、まわりの人の指針にもなっていくでしょう。",
+    meaning:"アメジストは「高貴な守りの石」と言われ、心を落ち着け、冷静な判断力を支えてくれると伝えられています。"
+  },
+  {
+    name:"ラピスラズリ", en:"LAPIS LAZULI",
+    grad:"radial-gradient(circle at 35% 30%, #4a6bc4, #27408f 55%, #17285e 90%)",
+    kw:["真実","成長","幸運"],
+    msg:"を選んだのは、自分にも人にも誠実であろうとする、まっすぐな魂の持ち主だからです。あなたは困難の中でも学びを見つけて成長していける傾向があります。いま感じている壁は、次の飛躍への準備期間かもしれません。目の前のことに丁寧に向き合うことで、気づけばひとまわり大きな自分になっているでしょう。",
+    meaning:"ラピスラズリは「天空の石」「最強の聖石」と言われ、持ち主を正しい方向へ導き、成長を後押しすると伝えられています。"
+  },
+  {
+    name:"ガーネット", en:"GARNET",
+    grad:"radial-gradient(circle at 35% 30%, #e06a6a, #a52a3a 55%, #5e1220 90%)",
+    kw:["実り","努力","一途"],
+    msg:"を選んだのは、こつこつと積み重ねたものを、実りに変えていける人だからです。あなたの努力は目立たないところでも続く、本物の粘り強さがあります。いまは、これまで蒔いてきた種が芽吹きはじめる時期です。結果を急がず、水をやり続けるつもりで目の前のことを続けてください。その実りは、あなたが思うより大きなものになるでしょう。",
+    meaning:"ガーネットは「実りの石」と言われ、努力を実らせ、大切な想いを貫く力を支えてくれると伝えられています。"
+  },
+  {
+    name:"翡翠", en:"JADE",
+    grad:"radial-gradient(circle at 35% 30%, #c9e8ce, #7dbb8a 55%, #3f7a52 90%)",
+    kw:["繁栄","徳","安定"],
+    msg:"を選んだのは、まわりに安心感を与える、器の大きさを持っているからです。あなたは損得よりも筋を通すことを大切にする傾向があり、その姿勢が信頼を集めています。いまは、足元を整え、大切なものを守り育てることで運気が安定していく時期です。あなたが築いてきたものは、時間とともに確かな豊かさへ育っていくでしょう。",
+    meaning:"翡翠は東洋で「五徳を象徴する仁の石」と言われ、人徳を高め、繁栄と安定をもたらすと伝えられています。"
+  },
+  {
+    name:"オニキス", en:"ONYX",
+    grad:"radial-gradient(circle at 35% 30%, #6a6a72, #2e2e35 55%, #101014 90%)",
+    kw:["意志","守護","継続"],
+    msg:"を選んだのは、まわりに流されない、静かで強い意志を持っているからです。あなたは自分の軸を守りながら、決めたことを長く続けていける傾向があります。いまは、余計なものを手放し、本当に大切なことに集中することで力を発揮しやすい時期です。あなたのぶれない姿勢そのものが、まわりの人にとっての道しるべになっていくでしょう。",
+    meaning:"オニキスは「守護の石」と言われ、邪気から持ち主を守り、意志を貫く力を支えてくれると伝えられています。"
+  },
+  {
+    name:"クリアクォーツ", en:"CLEAR QUARTZ",
+    grad:"radial-gradient(circle at 35% 30%, #ffffff, #e9edf2 50%, #c3ccd8 85%)",
+    kw:["浄化","可能性","調律"],
+    msg:"を選んだのは、どんな色にも染まれる、澄んだ可能性を持っているからです。あなたは環境や出会いによって新しい自分を見つけていける、変化に強い人です。いまは、心と身のまわりを整えることで、次に進むべき方向が澄んで見えてくる時期です。まっさらな気持ちで迎える朝を大切に。あなたの流れは、もう次の段階へ向かい始めています。",
+    meaning:"クリアクォーツ(水晶)は「万能の浄化石」と言われ、心身を整え、持ち主の可能性を引き出すと伝えられています。"
+  }
+];
+
+/* ══════════ 生年月日セレクト生成 ══════════ */
+function fillBirth(prefix){
+  const y=document.getElementById(prefix+"Year"),
+        m=document.getElementById(prefix+"Month"),
+        d=document.getElementById(prefix+"Day");
+  y.innerHTML='<option value="">年</option>';
+  const thisYear=new Date().getFullYear();
+  for(let i=thisYear;i>=1930;i--) y.innerHTML+=`<option>${i}</option>`;
+  m.innerHTML='<option value="">月</option>';
+  for(let i=1;i<=12;i++) m.innerHTML+=`<option>${i}</option>`;
+  d.innerHTML='<option value="">日</option>';
+  for(let i=1;i<=31;i++) d.innerHTML+=`<option>${i}</option>`;
+}
+fillBirth("s"); fillBirth("a");
+
+/* ══════════ 数秘計算 ══════════ */
+function digitSum(str){ return String(str).split("").reduce((a,c)=>a+Number(c),0); }
+function soulNumber(y,m,d){
+  let n=digitSum(""+y+String(m).padStart(2,"0")+String(d).padStart(2,"0"));
+  while(n>9) n=digitSum(n);
+  return n;
+}
+
+/* ══════════ ソウルストーン診断 ══════════ */
+function doShindan(){
+  const name=document.getElementById("sName").value.trim();
+  const y=document.getElementById("sYear").value,
+        m=document.getElementById("sMonth").value,
+        d=document.getElementById("sDay").value;
+  if(!name){ alert("お名前(ニックネーム可)をご入力ください。"); return; }
+  if(!y||!m||!d){ alert("生年月日を選択してください。"); return; }
+
+  const raw=digitSum(""+y+String(m).padStart(2,"0")+String(d).padStart(2,"0"));
+  const stone=STONES[(raw+Number(d))%12];
+  const num=soulNumber(y,m,d);
+
+  document.getElementById("rGem").style.background=stone.grad;
+  document.getElementById("rFor").textContent=`${name} さまのソウルストーン`;
+  document.getElementById("rNum").textContent=`SOUL NUMBER ─ ${num}`;
+  document.getElementById("rStone").textContent=stone.name;
+  document.getElementById("rStoneEn").textContent=stone.en;
+  document.getElementById("rKw").innerHTML=stone.kw.map(k=>`<span>${k}</span>`).join("");
+  document.getElementById("rMsg").textContent=`${name}さまに「${stone.name}」${stone.msg}`;
+  document.getElementById("rMeaning").textContent=stone.meaning;
+
+  const r=document.getElementById("result");
+  r.classList.add("show");
+  r.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+/* ══════════ 申込み内容の作成・コピー ══════════ */
+function makeApply(){
+  const name=document.getElementById("aName").value.trim();
+  const y=document.getElementById("aYear").value,
+        m=document.getElementById("aMonth").value,
+        d=document.getElementById("aDay").value;
+  const cat=document.getElementById("aCategory").value;
+  const use=document.querySelector('input[name="aUse"]:checked');
+  if(!name){ alert("お名前(ニックネーム可)をご入力ください。"); return; }
+  if(!y||!m||!d){ alert("生年月日を選択してください。"); return; }
+  if(!cat){ alert("ご相談カテゴリーを選択してください。"); return; }
+  if(!use){ alert("ご用途(自分用/ギフト)を選択してください。"); return; }
+
+  const time=document.getElementById("aTime").value||"不明";
+  const place=document.getElementById("aPlace").value.trim()||"未記入";
+  const detail=document.getElementById("aDetail").value.trim()||"特になし";
+  const ring=document.getElementById("aRing").value.trim()||"未記入";
+
+  const text=
+`【AMULETIA 本格鑑定 お申込み】
+──────────────
+◆ お名前:${name}
+◆ 生年月日:${y}年${m}月${d}日
+◆ 出生時刻:${time}
+◆ 出生地:${place}
+◆ ご相談カテゴリー:${cat}
+◆ ご相談内容:
+${detail}
+◆ リングサイズ:${ring}
+◆ ご用途:${use.value}
+──────────────
+このメッセージのままお送りください。`;
+
+  document.getElementById("applyText").value=text;
+  const box=document.getElementById("applyResult");
+  box.classList.add("show");
+  copyApply();
+  box.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+function copyApply(){
+  const ta=document.getElementById("applyText");
+  const status=document.getElementById("copyStatus");
+  const done=()=>{ status.textContent="✦ コピーしました。LINEまたはDMに貼り付けてお送りください。"; };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(ta.value).then(done).catch(()=>{ legacyCopy(ta,status); });
+  }else{
+    legacyCopy(ta,status);
+  }
+}
+function legacyCopy(ta,status){
+  ta.focus(); ta.select();
+  try{ document.execCommand("copy"); status.textContent="✦ コピーしました。LINEまたはDMに貼り付けてお送りください。"; }
+  catch(e){ status.textContent="上の内容を長押し(または全選択)してコピーしてください。"; }
+}
+
+/* ══════════ スクロールでふわっと表示 ══════════ */
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll(".fade").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
